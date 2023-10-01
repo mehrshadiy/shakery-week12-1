@@ -1,0 +1,26 @@
+.accordion {
+    width: 90%;
+    margin: 10px auto;
+    background: #212529;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+.accordion-item__btn{
+    background: transparent;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: left;
+}
+.accordion-item__content{
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.fold{
+    height: fit-content;
+    padding: 20px;
+}
