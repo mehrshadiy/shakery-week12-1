@@ -1,22 +1,24 @@
 let accordions = document.querySelectorAll(".accordion");
 for (let accordion of accordions) {
-    function foldAll(){
-        let accordionItems = accordion.querySelectorAll(".accordion-item")
+    let accordionItems = accordion.querySelectorAll(".accordion-item")
+    function closeAll(){
         for (let accordionItem of accordionItems) {
-            let accordionItemContent = accordionItem.querySelector(".accordion-item__content")
-            accordionItemContent.classList.remove("fold")
+            accordionItem.querySelector(".accordion-item__content").classList.remove("fold")
         }
     }
-    accordion.onclick = ()=>{
-        foldAll()
-    }
-    let accordionItems = accordion.querySelectorAll(".accordion-item")
     for (let accordionItem of accordionItems) {
         let accordionItemBtn = accordionItem.querySelector(".accordion-item__btn")
+        let accordionItemContent = accordionItem.querySelector(".accordion-item__content")
+
         accordionItemBtn.onclick = (e)=>{
-            foldAll()
-            e.target.nextElementSibling.classList.toggle("fold")
-            e.stopPropagation()
+            if (e.target.value==="folded"){
+                e.target.nextElementSibling.classList.remove("fold")
+                e.target.value = ""
+            }else {
+                closeAll()
+                e.target.nextElementSibling.classList.add("fold")
+                e.target.value = "folded"
+            }
         }
     }
 }

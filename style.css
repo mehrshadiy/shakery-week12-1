@@ -23,4 +23,5 @@
 .fold{
     height: fit-content;
     padding: 20px;
+    transition: height 0.5s ease-in-out;
 }
