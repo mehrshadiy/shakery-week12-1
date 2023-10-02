@@ -7,6 +7,10 @@
     overflow: hidden;
     border: 1px solid grey;
 }
+.accordion-item {
+    height: fit-content;
+    overflow: hidden;
+}
 .accordion-item__btn{
     background: transparent;
     border: 1px solid grey;
@@ -16,12 +20,14 @@
     text-align: left;
 }
 .accordion-item__content{
+    transition: all 0.5s ease-in-out;
+    transform: rotateX(90deg);
     height: 0;
     margin: 0;
-    overflow: hidden;
+    padding: 0;
 }
 .fold{
-    height: fit-content;
+    transform: rotateX(0deg);
+    position: relative;
     padding: 20px;
-    transition: height 0.5s ease-in-out;
 }
